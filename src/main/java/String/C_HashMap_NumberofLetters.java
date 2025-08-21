@@ -10,12 +10,17 @@ public class C_HashMap_NumberofLetters {
         String s = "Saravanan";
         Map<Character,Integer> hmap = new LinkedHashMap<>();
 
+//        for(int i=0;i<s.length();i++)   {
+//            if(hmap.containsKey(s.charAt(i)))   {
+//                hmap.put(s.charAt(i), hmap.get(s.charAt(i))+1);
+//            } else {
+//                hmap.put(s.charAt(i),1);
+//            }
+//        }
+
         for(int i=0;i<s.length();i++)   {
-            if(hmap.containsKey(s.charAt(i)))   {
-                hmap.put(s.charAt(i), hmap.get(s.charAt(i))+1);
-            } else {
-                hmap.put(s.charAt(i),1);
-            }
+            char c = s.charAt(i);
+            hmap.put(c , hmap.getOrDefault(c,0)+1);
         }
 
         System.out.println(hmap);
